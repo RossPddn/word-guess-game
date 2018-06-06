@@ -5,6 +5,7 @@ height:100%;
 #marsImg{
 opacity:.7;
 height:44vh;
+
 }
 body{
   background-color:black;
@@ -32,6 +33,7 @@ color:white;
 #leftColumnImg{
     max-height:30vh;
     max-width:45vw;
+    margin-top:15%;
 }
 p{
     font-family:'Kanit', 'Bowlby One SC', 'Passion One', san-serif;

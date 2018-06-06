@@ -4,7 +4,7 @@ height:100%;
 }
 #marsImg{
 opacity:.7;
-height:50vh;
+height:44vh;
 }
 body{
   background-color:#ab0000e0;
@@ -27,7 +27,7 @@ font-family:'Bowlby One SC', 'Kanit', 'Passion One', san-serif;
 border-style:dotted;
 border-width:2px;
 border-color:rgb(255, 151, 151);
-
+color:white;
 }
 #leftColumnImg{
     max-height:30vh;
@@ -38,4 +38,8 @@ p{
     font-size:1em;
     font-weight:bold;
     color:white;
+}
+#carouselExampleSlidesOnly{
+margin-bottom:-5.3em;
+
 }

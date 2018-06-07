@@ -8,35 +8,50 @@ var words = ['mars', 'venus', 'jupiter', 'uranus', 'saturn']
 var randomword = words[Math.round(Math.random()*4)];
 console.log(randomword);
 
-function word(){
+function word(key){
+    var key = event.key;
     for(var i = 0; i<randomword.length;i++){
         answerArray[i]="_";
 
     }
-    answer = answerArray.join("");
-document.getElementById("answer").innerHTML = answer;
-}
-
-
-function checkArray(event){
-    var key = event.key;
-    //if the chosen letter is in the random word do this, else do that
-   if(randomword.includes(key)){
+    if(randomword.includes(key)){
        
-       
-
-
-   }else{
-       wrongGuesses.push(key);
-       guesRemaining--;
-       document.getElementById('wrong').innerText = wrongGuesses;
-       document.getElementById('guessesRemaining').innerText = guesRemaining;
+        answerArray.push(key);
+ 
+ 
+    }else{
+        wrongGuesses.push(key);
+        guesRemaining--;
+        document.getElementById('wrong').innerText = wrongGuesses;
+        document.getElementById('guessesRemaining').innerText = guesRemaining;
+     
+ }
+ 
     
+    answer = answerArray.join("");
+    document.getElementById("answer").innerHTML = answer;
 }
 
 
-}
+// function checkArray(event){
+//     var key = event.key;
+//     //if the chosen letter is in the random word do this, else do that
+//    if(randomword.includes(key)){
+       
+//        answerArray.push(key);
+
+
+//    }else{
+//        wrongGuesses.push(key);
+//        guesRemaining--;
+//        document.getElementById('wrong').innerText = wrongGuesses;
+//        document.getElementById('guessesRemaining').innerText = guesRemaining;
+    
+// }
+
+
+// }
 
 //RESET guesses and word
-word();
-document.onkeyup = checkArray;
+document.onkeyup = word;
+//document.onkeyup = checkArray;

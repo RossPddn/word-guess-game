@@ -7,16 +7,23 @@ var answer;
 var words = ['mars', 'venus', 'jupiter', 'uranus', 'saturn']
 var randomword = words[Math.round(Math.random()*4)];
 console.log(randomword);
+for(var i = 0; i<randomword.length;i++){
+    answerArray[i]="_";
+
+}
 
 function word(key){
     var key = event.key;
-    for(var i = 0; i<randomword.length;i++){
-        answerArray[i]="_";
-
-    }
+ 
     if(randomword.includes(key)){
-       
-        answerArray.push(key);
+       for(var j = 0; j<randomword.length;j++){
+           if(randomword[j] === key){
+               answerArray[j]=key;
+               break;
+           }
+
+       }
+        
  
  
     }else{

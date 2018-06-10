@@ -12,53 +12,56 @@ for(var i = 0; i<randomword.length;i++){
 
 }
 
+
+
 function word(key){
     var key = event.key;
- 
+   
     if(randomword.includes(key)){
        for(var j = 0; j<randomword.length;j++){
            if(randomword[j] === key){
                answerArray[j]=key;
-               break;
+               //check if the arrays are fully the same
+              function CheckArr(randomword,answerArray){
+                if(randomword.length !== answerArray.length){
+                return false;
+             }for(var i= randomword.length; i--;){
+                 if(randomword[i] !== answerArray[i]){
+                     return false;
+                 }
+                 return true;
+
+
+             }
+
+              }
+              //END OF CHECKARR FUNCTION IF IT RETURNS TRUE ADD ONE TO WIN AND RESET
+              if(CheckArr(randomword,answerArray)== true){
+                  wins++;
+                  document.getElementById('wins').innerText = wins;
+              }
+                   }
+               }
+               
            }
 
-       }
+       
         
  
  
-    }else{
+    else{
         wrongGuesses.push(key);
         guesRemaining--;
         document.getElementById('wrong').innerText = wrongGuesses;
         document.getElementById('guessesRemaining').innerText = guesRemaining;
      
  }
- 
-    
+
     answer = answerArray.join("");
     document.getElementById("answer").innerHTML = answer;
 }
 
-
-// function checkArray(event){
-//     var key = event.key;
-//     //if the chosen letter is in the random word do this, else do that
-//    if(randomword.includes(key)){
-       
-//        answerArray.push(key);
-
-
-//    }else{
-//        wrongGuesses.push(key);
-//        guesRemaining--;
-//        document.getElementById('wrong').innerText = wrongGuesses;
-//        document.getElementById('guessesRemaining').innerText = guesRemaining;
-    
-// }
-
-
-// }
-
-//RESET guesses and word
 document.onkeyup = word;
+
+
 //document.onkeyup = checkArray;

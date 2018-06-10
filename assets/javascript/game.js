@@ -41,14 +41,26 @@ function word(key){
                }
                if(CheckArr(randomword,answerArray)== true){
                 if(randomword === 'mars'){
+                    document.getElementById('imgCaption').style.display = 'block';
+                    document.getElementById('imgCaption').innerText = "Mars!!"
                     document.getElementById('leftColumnImg').src = 'assets/images/mars.jpg';
                 }else if(randomword === "saturn"){
+                    document.getElementById('imgCaption').style.display = 'block';
+                    document.getElementById('imgCaption').innerText = "Saturn!!"
                     document.getElementById('leftColumnImg').src = 'assets/images/saturn_dream.jpg';
                 }else if(randomword ==="pluto"){
+                    document.getElementById('imgCaption').style.display = 'block';
+                    document.getElementById('imgCaption').innerText = "Pluto!!"
                     document.getElementById('leftColumnImg').src = 'assets/images/pluto.jpg';
                 }else if(randomword ==="galaxy"){
+                    document.getElementById('imgCaption').style.display = 'block';
+                    document.getElementById('imgCaption').innerText = "Milky Way!!"
                     document.getElementById('leftColumnImg').src = 'assets/images/galaxyOne.jpg';
                     
+                }else if(randomword ==="jupiter"){
+                    document.getElementById('imgCaption').style.display = 'block';
+                    document.getElementById('imgCaption').innerText = "Jupiter!!"
+                    document.getElementById('leftColumnImg').src = 'assets/images/jupiter.jpg';
                 }
                 wins++;
                 guesRemaining = 13;
@@ -73,8 +85,10 @@ function word(key){
  
  
     else if((CheckArr(randomword,answerArray)== false)){
+        if(wrongGuesses.includes(key) == false){
         wrongGuesses.push(key);
         guesRemaining--;
+    }
         document.getElementById('wrong').innerText = wrongGuesses;
         document.getElementById('guessesRemaining').innerText = guesRemaining;
         if(guesRemaining == 0){

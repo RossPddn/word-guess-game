@@ -23,7 +23,11 @@ body{
    border-color:rgb(143, 95, 97);
     height:40vh;
 }
-h1{
+h3{
+    display:none;
+    margin-bottom:0;}
+
+h1, #imgCaption{
 font-family:'Bowlby One SC', 'Kanit', 'Passion One', san-serif;
 border-style:dotted;
 border-width:2px;

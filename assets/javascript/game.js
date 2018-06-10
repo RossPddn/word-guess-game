@@ -39,6 +39,23 @@ function word(key){
            
                    }
                }
+               if(CheckArr(randomword,answerArray)== true){
+                wins++;
+                guesRemaining = 13;
+                wrongGuesses=[];
+                answer = [];
+                answerArray = [];
+                document.getElementById('wrong').innerText = wrongGuesses;
+                document.getElementById("answer").innerHTML = answer;
+                document.getElementById('wins').innerText = wins;
+                document.getElementById('guessesRemaining').innerText = guesRemaining;
+                randomword = words[Math.round(Math.random()*4)];
+                console.log(randomword);
+                for(var i = 0; i<randomword.length;i++){
+                 answerArray[i]="_";
+        
+        }
+            }
                
            }
 
@@ -46,33 +63,37 @@ function word(key){
         
  
  
-    else{
+    else if((CheckArr(randomword,answerArray)== false)){
         wrongGuesses.push(key);
         guesRemaining--;
         document.getElementById('wrong').innerText = wrongGuesses;
         document.getElementById('guessesRemaining').innerText = guesRemaining;
+        if(guesRemaining == 0){
+            guesRemaining = 13;
+           
+            wrongGuesses=[];
+            answer = [];
+            answerArray = [];
+            document.getElementById('wrong').innerText = wrongGuesses;
+            document.getElementById("answer").innerHTML = answer;
+            document.getElementById('wins').innerText = wins;
+            document.getElementById('guessesRemaining').innerText = guesRemaining;
+            randomword = words[Math.round(Math.random()*4)];
+            console.log(randomword);
+            for(var i = 0; i<randomword.length;i++){
+             answerArray[i]="_";
+    
+    }
+
+        }
+      
      
  }
 
     answer = answerArray.join("");
     document.getElementById("answer").innerHTML = answer;
-    if(CheckArr(randomword,answerArray)== true){
-        wins++;
-        guesRemaining = 13;
-        wrongGuesses=[];
-        answer = [];
-        answerArray = [];
-        document.getElementById('wrong').innerText = wrongGuesses;
-        document.getElementById("answer").innerHTML = answer;
-        document.getElementById('wins').innerText = wins;
-        document.getElementById('guessesRemaining').innerText = guesRemaining;
-        randomword = words[Math.round(Math.random()*4)];
-        console.log(randomword);
-        for(var i = 0; i<randomword.length;i++){
-         answerArray[i]="_";
 
-}
-    }
+   
 }
 
 document.onkeyup = word;

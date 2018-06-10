@@ -5,7 +5,7 @@ answerArray=[];
 document.getElementById('guessesRemaining').innerText = guesRemaining;
 var answer;
 
-var words = ['mars', 'venus', 'jupiter', 'uranus', 'saturn']
+var words = ['mars', 'galaxy', 'jupiter', 'pluto', 'saturn']
 var randomword = words[Math.round(Math.random()*4)];
 console.log(randomword);
 for(var i = 0; i<randomword.length;i++){
@@ -40,6 +40,16 @@ function word(key){
                    }
                }
                if(CheckArr(randomword,answerArray)== true){
+                if(randomword === 'mars'){
+                    document.getElementById('leftColumnImg').src = 'assets/images/mars.jpg';
+                }else if(randomword === "saturn"){
+                    document.getElementById('leftColumnImg').src = 'assets/images/saturn_dream.jpg';
+                }else if(randomword ==="pluto"){
+                    document.getElementById('leftColumnImg').src = 'assets/images/pluto.jpg';
+                }else if(randomword ==="galaxy"){
+                    document.getElementById('leftColumnImg').src = 'assets/images/galaxyOne.jpg';
+                    
+                }
                 wins++;
                 guesRemaining = 13;
                 wrongGuesses=[];
@@ -53,8 +63,7 @@ function word(key){
                 console.log(randomword);
                 for(var i = 0; i<randomword.length;i++){
                  answerArray[i]="_";
-        
-        }
+             }
             }
                
            }
@@ -70,7 +79,6 @@ function word(key){
         document.getElementById('guessesRemaining').innerText = guesRemaining;
         if(guesRemaining == 0){
             guesRemaining = 13;
-           
             wrongGuesses=[];
             answer = [];
             answerArray = [];

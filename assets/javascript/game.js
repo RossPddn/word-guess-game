@@ -4,6 +4,7 @@ wrongGuesses=[];
 answerArray=[];
 document.getElementById('guessesRemaining').innerText = guesRemaining;
 var answer;
+
 var words = ['mars', 'venus', 'jupiter', 'uranus', 'saturn']
 var randomword = words[Math.round(Math.random()*4)];
 console.log(randomword);
@@ -35,11 +36,7 @@ function word(key){
              }
 
               }
-              //END OF CHECKARR FUNCTION IF IT RETURNS TRUE ADD ONE TO WIN AND RESET
-              if(CheckArr(randomword,answerArray)== true){
-                  wins++;
-                  document.getElementById('wins').innerText = wins;
-              }
+           
                    }
                }
                
@@ -59,6 +56,23 @@ function word(key){
 
     answer = answerArray.join("");
     document.getElementById("answer").innerHTML = answer;
+    if(CheckArr(randomword,answerArray)== true){
+        wins++;
+        guesRemaining = 13;
+        wrongGuesses=[];
+        answer;
+        answerArray=[];
+        document.getElementById('wrong').innerText = wrongGuesses;
+        document.getElementById("answer").innerHTML = answer;
+        document.getElementById('wins').innerText = wins;
+        document.getElementById('guessesRemaining').innerText = guesRemaining;
+        randomword = words[Math.round(Math.random()*4)];
+        console.log(randomword);
+        for(var i = 0; i<randomword.length;i++){
+            answerArray[i]="_";
+        
+        }
+    }
 }
 
 document.onkeyup = word;

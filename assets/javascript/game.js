@@ -20,10 +20,11 @@ for(var i = 0; i<randomword.length;i++){
          if(randomword[i] !== answerArray[i]){
              return false;
          }
-         return true;
+         
 
 
      }
+     return true;
 
       }
 

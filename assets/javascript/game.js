@@ -12,6 +12,8 @@ for(var i = 0; i<randomword.length;i++){
     answerArray[i]="_";
 
 }
+answer = answerArray.join("");
+document.getElementById("answer").innerHTML = answer;
        //check if the arrays are fully the same
        function CheckArr(randomword,answerArray){
         if(randomword.length !== answerArray.length){
